@@ -1,1 +1,4 @@
-成功读取数据。readstream
+WJMREAD
+ 
+SUCESS
+~!!!
