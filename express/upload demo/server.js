@@ -12,6 +12,8 @@ app.use(multer({dest:'/tmp/'}).array('image'));
 
 app.get('/upload.html', function (req, res) {
    res.sendFile( __dirname + "/" + "upload.html" );
+   // var form = fs.readFileSync('./form.html', {encoding: 'utf8'});
+    // res.send(form);
 });
 
 
@@ -22,21 +24,12 @@ app.post('/file_upload',function(req,res){
 
 	// readfile 第一个参数文件路径，第二个回调函数
 	fs.readFile(req.files[0].path,function(err,data){
-		fs.writeFile(des_file,data,function(err){
-			if (err) {
-				console.log(err);
-			}else{
-				response={
-					message:'File uploaded successfully',
-					filename:req.files[0].originalname
-				};
-			}
-			console.log(response);
-			res.end(JSON.stringify(response));
-
-		});
+		fs.writeFile(des_file,data);
 	});
-})
+});
+		
+		//自改简易版文件上传。减少了报错提醒，方便学习
+
 
 
 var server=app.listen(8081,function(){
