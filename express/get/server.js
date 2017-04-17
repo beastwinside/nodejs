@@ -16,6 +16,7 @@ app.get('/process_get', function (req, res) {
        last_name:req.query.lastname
    };
    console.log(response);
+   
    res.end(JSON.stringify(response));
 })
  
