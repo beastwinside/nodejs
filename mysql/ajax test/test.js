@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 app.use(express.static('public'));
- 
+ //妈的
 
 app.get('/testt.html', function (req, res) {
    res.sendFile( __dirname + "/" + "testt.html" );
